@@ -1,0 +1,1 @@
+module.exports = [{"isClass":true,"priority":10000.0005,"key":"shuoTitleLabel","style":{left:"55dp",textAlign:"left",backgroundColor:"white",}},{"isClass":true,"priority":10000.0006,"key":"shuoUserAvatarView","style":{left:"0dp",width:"50dp",height:"50dp",}}];

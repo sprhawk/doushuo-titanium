@@ -1,0 +1,14 @@
+Doushuo Titanium Demo
+=====================
+
+Just demo the usage of Titanium ( http://www.appcelerator.com/titanium ).
+
+Use Douban.com shuo api
+
+The Missing DoubanAPI.js contains my apikey and secret and redirect, please replace with your own.
+the file looks like:
+
+exports.apikey = "";
+exports.secret = "";
+exports.redirect = "";
+

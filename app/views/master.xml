@@ -1,0 +1,20 @@
+<Alloy>
+	<Window id="mainWindow" title="豆瓣说 Titanium Demo">
+		<Menu id="action_menu" platform="android">
+		
+		</Menu>	
+		<ListView id="shuoListView" defaultItemTemplate="shuoListItem">
+			<Templates>
+				<ItemTemplate name="shuoListItem">
+					<ImageView class="shuoUserAvatarView" bindId="avatarView" />
+					<View id="textContainer">
+						<Label class="shuoTitleLabel" bindId="textLabel"/>
+					</View>
+				</ItemTemplate>	
+			</Templates>
+			<ListSection id="shuoListSection">
+				<ListItem template="shuoListItem" />
+		</ListSection>
+		</ListView>
+	</Window>
+</Alloy>
