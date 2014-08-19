@@ -1,7 +1,7 @@
 <Alloy>
 	<Window id="mainWindow" title="豆瓣说 Titanium Demo">
 		<Menu id="action_menu" platform="android">
-		
+			<MenuItem></MenuItem>
 		</Menu>	
 		<ListView id="shuoListView" defaultItemTemplate="shuoListItem">
 			<Templates>

@@ -1,0 +1,6 @@
+<Alloy>
+	<Window id="doubanAuthWindow">
+		<WebView id="doubanAuthWebView"> 
+		</WebView>
+	</Window>
+</Alloy>

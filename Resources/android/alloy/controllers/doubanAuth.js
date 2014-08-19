@@ -26,20 +26,14 @@ function Controller() {
     $.__views.doubanAuthWindow = Ti.UI.createWindow({
         id: "doubanAuthWindow"
     });
+    $.__views.doubanAuthWindow && $.addTopLevelView($.__views.doubanAuthWindow);
     $.__views.doubanAuthWebView = Ti.UI.createWebView({
         id: "doubanAuthWebView"
     });
     $.__views.doubanAuthWindow.add($.__views.doubanAuthWebView);
-    $.__views.doubanAuthNav = Ti.UI.iOS.createNavigationWindow({
-        window: $.__views.doubanAuthWindow,
-        id: "doubanAuthNav"
-    });
-    $.__views.doubanAuthNav && $.addTopLevelView($.__views.doubanAuthNav);
     exports.destroy = function() {};
     _.extend($, $.__views);
     !function() {
-        var rootWindow = null;
-        rootWindow = $.doubanAuthNav;
         var DoubanAPI = require("DoubanAPI");
         var url = "https://www.douban.com/service/auth2/auth";
         $.doubanAuthWebView.addEventListener("beforeload", function(e) {
@@ -61,7 +55,7 @@ function Controller() {
                             expires = Math.floor(Date.now() / 1e3 + expires);
                             Ti.App.Properties.setInt("Expires", expires);
                             console.log("get token:" + param["access_token"]);
-                            rootWindow.close();
+                            $.doubanAuthWindow.close();
                         }
                     },
                     onerror: function(e) {

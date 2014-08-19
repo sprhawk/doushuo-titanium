@@ -1,4 +1,12 @@
 (function() {
+	var rootWindow = null;
+	
+	if (OS_IOS) {
+		rootWindow = $.doubanAuthNav;
+	} else if (OS_ANDROID) {
+		rootWindow = $.doubanAuthWindow;
+	}
+
 	var DoubanAPI = require("DoubanAPI");
 	var url = "https://www.douban.com/service/auth2/auth";
 	$.doubanAuthWebView.addEventListener("beforeload", function(e) {
@@ -19,8 +27,8 @@
 						var expires = param["expires_in"];
 						expires = Math.floor(Date.now()/1000 + expires);
 						Ti.App.Properties.setInt("Expires", expires);
-						console.log("get token:" + param["access_token"]);				
-						$.doubanAuthNav.close();
+						console.log("get token:" + param["access_token"]);
+						rootWindow.close();
 					}
 					else {
 						

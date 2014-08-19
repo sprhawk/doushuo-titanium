@@ -4,7 +4,7 @@
 	if (OS_IOS) {
 		rootWindow = $.nav;
 	} else if (OS_ANDROID) {
-		rootWindow = $.mainWindow;
+		rootWindow = $.master.getView();
 	}
 	
 	rootWindow.open();
